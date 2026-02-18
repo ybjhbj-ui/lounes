@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOUNES | La Fusion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           STYLE "DARK MONEY"
+           ========================================= */
+        :root {
+            --bg-color: #050505;       
+            --card-bg: #111111;        
+            --text: #ffffff;           
+            --accent: #00ff88;         /* Vert "Succès" */
+            --accent-glow: rgba(0, 255, 136, 0.2);
+            --danger: #ff3333;         
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
+        
+        /* HEADER */
+        header {
+            background: radial-gradient(circle at top, #1a1a1a 0%, #000000 90%);
+            padding: 50px 20px 40px; text-align: center; border-bottom: 1px solid #333;
+        }
+        .profile-container { position: relative; display: inline-block; margin-bottom: 15px; }
+        .profile-pic { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent); object-fit: cover; box-shadow: 0 0 30px var(--accent-glow); }
+        
+        h1 { font-size: 2.8rem; color: #fff; line-height: 1.1; margin-bottom: 10px; }
+        .tagline { color: #aaa; font-size: 1.1rem; max-width: 500px; margin: 0 auto 20px; }
+        
+        .price-box { border: 1px solid var(--accent); display: inline-block; padding: 10px 20px; border-radius: 5px; background: rgba(0, 255, 136, 0.05); }
+        .old-price { text-decoration: line-through; color: var(--danger); font-size: 0.9rem; margin-right: 10px; }
+        .new-price { font-size: 1.3rem; color: var(--accent); font-weight: bold; font-family: 'Oswald'; }
+
+        /* BOUTON D'ACTION */
+        .cta-btn {
+            display: block; width: 100%; max-width: 400px; margin: 25px auto 0;
+            background: var(--accent); color: #000; padding: 20px; 
+            border-radius: 8px; font-weight: 900; text-transform: uppercase; text-decoration: none; font-size: 1.2rem;
+            box-shadow: 0 0 20px var(--accent-glow); transition: 0.2s; animation: pulse 2s infinite; text-align: center;
+        }
+        .cta-btn:active { transform: scale(0.98); }
+
+        /* SECTIONS */
+        .container { max-width: 700px; margin: 0 auto; padding: 20px; }
+        section { background: var(--card-bg); padding: 30px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #222; }
+        h2 { color: var(--accent); font-size: 1.8rem; margin-bottom: 20px; border-left: 5px solid #fff; padding-left: 15px; }
+
+        /* --- NOUVEAU : SECTION QUI SUIS-JE --- */
+        .bio-box {
+            display: flex; flex-direction: column; align-items: center; gap: 20px;
+        }
+        .bio-img {
+            width: 100%; max-width: 300px; height: auto; border-radius: 10px; 
+            border: 2px solid #333; filter: grayscale(20%);
+        }
+        .bio-text { text-align: left; }
+        .bio-text strong { color: #fff; }
+
+        /* --- NOUVEAU : PREUVES GÉANTES --- */
+        .proof-stack {
+            display: flex; flex-direction: column; gap: 20px;
+        }
+        .proof-item {
+            width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #333;
+        }
+        .proof-item img {
+            width: 100%; height: auto; display: block; /* Supprime l'espace vide sous l'image */
+        }
+
+        /* LISTE AVANTAGES */
+        .module-list { list-style: none; padding: 0; }
+        .module-list li { margin-bottom: 15px; font-size: 1rem; display: flex; align-items: start; background: rgba(255,255,255,0.03); padding: 10px; border-radius: 5px; }
+        .check { color: var(--accent); margin-right: 15px; font-weight: bold; font-size: 1.2rem; }
+
+        /* RESPONSIVE DESKTOP (Si écran large) */
+        @media (min-width: 768px) {
+            .bio-box { flex-direction: row; align-items: flex-start; }
+            .bio-img { width: 40%; }
+            .bio-text { width: 60%; }
+        }
+
+        footer { text-align: center; padding: 40px 20px; color: #444; font-size: 0.8rem; }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="profile-container">
+        <img src="lounes.jpg" alt="Lounes" class="profile-pic" onerror="this.src='https://via.placeholder.com/150/000000/00ff88?text=L'">
+    </div>
+    
+    <h1>LA FUSION</h1>
+    <p class="tagline">"J'ai payé 7500€ les meilleurs accompagnements pour que tu ne paies que 500€."</p>
+    
+    <div class="price-box">
+        <span class="old-price">VALEUR 3000€+</span>
+        <span class="new-price">ACCÈS : 500€</span>
+    </div>
+
+    <a href="https://ig.me/m/lounes.442" class="cta-btn">DM "GO" POUR ACCÉDER 🚀</a>
+    <p style="font-size:0.8rem; color:#666; margin-top:10px;">(Places limitées ce mois-ci)</p>
+</header>
+
+<div class="container">
+
+    <section>
+        <h2>QUI EST LOUNES ?</h2>
+        <div class="bio-box">
+            <img src="bio.jpg" alt="Lounes Lifestyle" class="bio-img" onerror="this.src='https://via.placeholder.com/400x500/333/fff?text=Photo+Bio'">
+            
+            <div class="bio-text">
+                <p style="margin-top:0;"><strong>J'étais fauché. J'ai tout testé.</strong></p>
+                <p>J'en avais marre de voir des formations à 3000€ vendues par des mecs qui n'ont jamais rien fait.</p>
+                <p>Alors j'ai pris une décision radicale : <strong>Payer les meilleurs coachs de France (7500€ d'investissement)</strong>, récupérer leurs stratégies, et te les offrir pour une fraction du prix.</p>
+                <p style="color:var(--accent); font-weight:bold; margin-bottom:0;">Mon but ? Que tu encaisses tes premiers 10k€ sans te ruiner.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>💥 RÉSULTATS & PREUVES</h2>
+        <p style="font-size:0.9rem; margin-bottom:20px; color:#ccc;">Pas de blabla. Juste des chiffres.</p>
+        
+        <div class="proof-stack">
+            <div class="proof-item"><img src="proof1.jpg" alt="Résultat Stripe"></div>
+            <div class="proof-item"><img src="proof2.jpg" alt="Témoignage Client"></div>
+            <div class="proof-item"><img src="proof3.jpg" alt="Autre Preuve"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📦 DANS LA FUSION</h2>
+        <ul class="module-list">
+            <li><span class="check">✓</span> <strong>Stratégies Top 1% :</strong> Les méthodes exactes des plus gros du marché.</li>
+            <li><span class="check">✓</span> <strong>Économie Massive :</strong> Tu gardes 7000€ dans ta poche pour investir ailleurs.</li>
+            <li><span class="check">✓</span> <strong>Réseau Privé :</strong> Accès à ceux qui veulent tout casser comme toi.</li>
+            <li><span class="check">✓</span> <strong>Mise à jour à vie :</strong> Dès qu'une nouvelle technique sort, je l'ajoute.</li>
+        </ul>
+    </section>
+
+    <div style="text-align:center; margin-top:40px; margin-bottom: 40px;">
+        <h3 style="color:#fff;">NE RESTE PAS SUR LA TOUCHE.</h3>
+        <p style="color:#888;">Le prix augmentera bientôt.</p>
+        <a href="https://ig.me/m/lounes.442" class="cta-btn">JE VEUX MA PLACE MAINTENANT 🔥</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Lounes - La Fusion</p>
+</footer>
+
+</body>
+</html>
